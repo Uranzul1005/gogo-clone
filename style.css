@@ -1,7 +1,12 @@
+@font-face {
+  font-family: Helvetica Neue;
+  src: url(./Helvetica\ Neue\ Medium\ Extended.ttf);
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif, Arial;
+  font-family: Helvetica Neue, sans-serif;
 }
 
 * {
@@ -11,7 +16,7 @@ body {
 header {
   display: flex;
   width: 100%;
-  margin-top: 5px;
+  font-family: sans-serif, Arial;
 }
 
 header .img1 {
@@ -22,36 +27,46 @@ header .img1 {
 }
 
 .header-menus {
-  width: 625px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 626.34px;
   height: 50px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  font-weight: 700;
+}
+
+.header-menus div {
+  padding: 0 15px;
 }
 
 .header-weather {
   display: flex;
+  align-items: center;
   flex: 1;
-  padding: 3px 5px;
   gap: 5px;
 }
 
-.flex {
+.temp-flex {
   display: flex;
   gap: 5px;
 }
 
 .temperature {
-  width: fit-content;
   height: 46px;
+  padding: 3px 5px;
   gap: 5px;
   display: flex;
   flex-direction: column;
-  text-align: center;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 5px;
+}
+
+.cal-name {
+  font-size: 10px;
+}
+
+.cal-numb {
+  font-size: 14px;
 }
 
 .image-bar {
@@ -59,17 +74,20 @@ header .img1 {
 }
 
 .topic-picture {
+  display: block;
   height: 330px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  width: 100%;
 }
 
 .topic-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 36px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
 }
 
 .topic-picture1 {
@@ -94,27 +112,31 @@ header .img1 {
 .story-title {
   height: 25.5px;
   margin: 40px 30px 20px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  font-size: 26px;
+}
+
+.story-title span {
+  background-color: #00b0f4;
+  font-size: 18px;
+  padding: 2px 3px;
+  color: white;
+  font-weight: 700;
 }
 
 .storypic {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* display: flex;
   gap: 15px;
-  padding: 0 15px;
+  padding: 0 15px; */
   /* margin-right: 30px;
   margin-left: 15px; */
 }
 
-.storypic div {
+/* .storypic img {
   height: 235px;
-  width: 100%;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
-  /* margin-left: 15px; */
-}
+  width: calc(100vw-155px / 6);
+} */
 
 .date {
   height: 84.87px;
@@ -410,8 +432,14 @@ footer {
   .story-picture3 {
     display: none;
   }
+
   .story-title {
     margin: 40px 15px 20px;
+  }
+
+  .storypic img {
+    height: 235px;
+    width: calc(100vw- 45px / 2);
   }
 
   .storynews {
@@ -522,6 +550,11 @@ footer {
   .left-column {
     display: none;
   }
+
+  .temperature {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+  }
 }
 
 @media (min-width: 961px) {
@@ -535,6 +568,38 @@ footer {
 
   .header-bar {
     display: none;
+  }
+
+  .header-weather {
+    justify-content: end;
+  }
+
+  .cal-name {
+    font-size: 12px;
+  }
+
+  .cal-numb {
+    font-size: 18px;
+  }
+
+  header .img1 {
+    width: 119px;
+    height: 38.91px;
+    padding: 0px;
+    margin-top: 0px;
+  }
+
+  header {
+    height: 88.91px;
+    align-items: center;
+  }
+
+  .image-bar {
+    display: none;
+  }
+
+  .temperature {
+    height: 50px;
   }
 
   .story-title {
@@ -605,7 +670,6 @@ footer {
     padding: 50px 40px;
   }
 }
-
 @media (min-width: 640px) {
   .blacknews {
     height: 312px;
