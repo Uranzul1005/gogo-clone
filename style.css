@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica Neue, sans-serif;
+  width: 1220px;
 }
 
 * {
@@ -87,10 +88,31 @@ header .img1 {
 }
 
 .main-number {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 65.25px;
+  height: 36px;
   color: #767676;
   background: #f0efef;
   border-radius: 100px;
   padding: 5px 10px;
+}
+
+button {
+  width: 73.02px;
+  height: 30px;
+  border-radius: 100px;
+  color: white;
+  background-image: linear-gradient(-120deg, #e08100, #c90027);
+  font-size: 12px;
+  font-weight: 700px;
+  box-sizing: content-box;
+  transition: padding 0.5s;
+}
+
+button:hover {
+  padding: 0 15px;
 }
 
 .topic-menu {
@@ -110,16 +132,32 @@ header .img1 {
   gap: 15px;
 }
 
+.topic-titles {
+  flex: 1;
+}
+
 .topic1 {
   margin-top: 5px;
   padding: 0 40px 0;
 }
 
 .topic-menu1 {
-  height: 333px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  display: flex;
+  gap: 15px;
+  padding: 30px 0 50px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.top-pic {
+  height: 175px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.top-ad {
+  height: 270px;
+  flex: 1;
 }
 
 .story-title {
@@ -145,11 +183,50 @@ header .img1 {
   display: flex;
   padding: 0 15px;
   gap: 15px;
+  color: white;
+}
+
+.story-style {
+  height: 235px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 .storypic img {
   height: 235px;
   width: calc(100vw / 3 - 90px / 3);
+}
+
+/* .story-picture1 {
+  width: 100%;
+  height: 100%;
+} */
+
+.over-title {
+  position: absolute;
+  bottom: 0;
+  font-size: 13px;
+  line-height: 20px;
+  max-height: 40px;
+  overflow: hidden;
+  transition: max-height 0.5;
+}
+
+.small-logo {
+  position: absolute;
+  top: 0;
+}
+
+.eyes {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 5px;
+}
+
+.story-style:hover over-title {
+  max-height: 120px;
 }
 
 .date {
@@ -169,18 +246,14 @@ header .img1 {
   width: 100%;
 }
 
-.story-news {
-  height: 110px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  font-weight: 400px;
-}
-
 .story-comment {
   display: flex;
   gap: 15px;
   font-weight: 400;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 400px;
 }
 
 .story-comment img {
@@ -193,6 +266,9 @@ header .img1 {
   display: flex;
   margin-top: 10px;
   gap: 15px;
+  font-size: 14px;
+  color: #888;
+  opacity: 0.5;
 }
 
 .story-ad {
@@ -222,18 +298,22 @@ header .img1 {
   height: 30.33px;
   width: 290px;
   margin-bottom: 50px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .adnews {
   height: 280px;
   width: 290px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
   margin-bottom: 20px;
+}
+
+.adnews img {
+  width: 290px;
+  height: 170px;
 }
 
 .ad-news {
@@ -243,12 +323,29 @@ header .img1 {
 }
 
 .trendnews {
+  display: flex;
+  justify-content: center;
   height: 69px;
   width: 340px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
   margin-bottom: 20px;
+  gap: 15px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+.trend-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.numbers {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-weight: 700;
+  color: #e00034;
+  font-size: 46px;
 }
 
 .two-columns {
@@ -262,13 +359,21 @@ header .img1 {
 }
 
 .trendtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
+  padding: 30px 50px;
   height: 88.33px;
   width: 340px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.orangenews {
+  height: 1140px;
+  background-color: cornsilk;
 }
 
 .interview {
