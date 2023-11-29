@@ -33,11 +33,22 @@ header .img1 {
   justify-content: space-around;
   width: 626.34px;
   height: 50px;
-  font-weight: 700;
 }
 
 .header-menus div {
   padding: 0 15px;
+}
+
+/* .hovermenu {
+  opacity: 0;
+} */
+
+.ball::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e08100;
 }
 
 .header-weather {
@@ -103,6 +114,7 @@ button {
   width: 73.02px;
   height: 30px;
   border-radius: 100px;
+  border-color: white;
   color: white;
   background-image: linear-gradient(-120deg, #e08100, #c90027);
   font-size: 12px;
@@ -130,6 +142,12 @@ button:hover {
   display: flex;
   height: 385px;
   gap: 15px;
+  background: linear-gradient(
+    90deg,
+    #f4f4f4 7%,
+    hsla(0, 0%, 100%, 0.220348) 17%
+  );
+  border-radius: 10px;
 }
 
 .topic-titles {
@@ -188,44 +206,52 @@ button:hover {
 
 .story-style {
   height: 235px;
+  width: calc(100vw / 3 - 90px / 3);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
 
-.storypic img {
-  height: 235px;
-  width: calc(100vw / 3 - 90px / 3);
-}
-
-/* .story-picture1 {
+.dinospic {
   width: 100%;
   height: 100%;
-} */
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.story-style:hover .dinospic {
+  transform: scale(1.2);
+}
 
 .over-title {
-  position: absolute;
-  bottom: 0;
   font-size: 13px;
+  font-weight: 500;
   line-height: 20px;
   max-height: 40px;
   overflow: hidden;
-  transition: max-height 0.5;
+  transition: max-height 0.5s;
 }
 
 .small-logo {
   position: absolute;
-  top: 0;
+  top: 10px;
+  left: 10px;
+}
+
+.storyeyes {
+  font-size: 12px;
 }
 
 .eyes {
+  position: absolute;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   padding: 10px;
   gap: 5px;
 }
 
-.story-style:hover over-title {
+.story-style:hover .over-title {
   max-height: 120px;
 }
 
@@ -235,6 +261,36 @@ button:hover {
   opacity: 0.5;
   border: 2px solid grey;
   margin-bottom: 10px;
+}
+
+.calendar {
+  display: flex;
+  align-items: center;
+  color: #b7b6b6;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.onecalendar {
+  flex: 1;
+}
+
+.onecalendar:hover .none {
+  color: #407ce8;
+}
+
+.onecalendar:hover .box {
+  background-color: #407ce8;
+}
+
+.onecalendar:hover .month {
+  color: #407ce8;
+}
+
+.box {
+  height: 7px;
+  background-color: #b7b6b6;
+  border-radius: 20px;
 }
 
 .storynews {
@@ -377,11 +433,10 @@ button:hover {
 }
 
 .interview {
+  display: flex;
+  gap: 5px;
   height: 27.83px;
   margin: 80px 20px 20px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
 }
 
 .interpics {
@@ -565,13 +620,13 @@ footer {
     margin: 40px 15px 20px;
   }
 
-  .storynews {
-    margin: 15px;
-  }
-
-  .storypic img {
+  .story-style {
     height: 235px;
     width: calc(50vw - 45px / 2);
+  }
+
+  .storynews {
+    margin: 15px;
   }
 
   .lifestyle-pic1 {
@@ -735,15 +790,15 @@ footer {
     margin-right: 40px;
   }
 
+  .story-style {
+    height: 235px;
+    width: calc(100vw / 6 - 155px / 6);
+  }
+
   .storypic {
     padding: 0 40px;
     /* margin-left: 25px;
     margin-right: 40px; */
-  }
-
-  .storypic img {
-    height: 235px;
-    width: calc(100vw / 6 - 155px / 6);
   }
 
   .storynews {
@@ -821,5 +876,11 @@ footer {
 
   footer div {
     width: 100%;
+  }
+}
+
+@media (min-width: 1220px) {
+  .storypic {
+    width: 1220px;
   }
 }
