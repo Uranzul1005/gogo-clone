@@ -35,20 +35,46 @@ header .img1 {
   height: 50px;
 }
 
-.header-menus div {
+.garchig {
+  display: flex;
+  gap: 5px;
+}
+
+.medee {
+  position: relative;
   padding: 0 15px;
 }
 
-/* .hovermenu {
+.hovermenu {
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  top: 50px;
+  font-weight: 550;
+  background-color: white;
+  padding: 15px 40px 15px 25px;
   opacity: 0;
-} */
+  z-index: 1;
+}
+
+.medee:hover .hovermenu {
+  opacity: 1;
+}
+
+.ball {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  gap: 10px;
+}
 
 .ball::before {
+  display: block;
   content: "";
-  width: 30px;
-  height: 30px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background-color: #e08100;
+  background-color: #297cf0;
 }
 
 .header-weather {
@@ -171,11 +197,13 @@ button:hover {
   height: 175px;
   width: 100%;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .top-ad {
   height: 270px;
   flex: 1;
+  border-radius: 5px;
 }
 
 .story-title {
@@ -305,17 +333,14 @@ button:hover {
 .story-comment {
   display: flex;
   gap: 15px;
-  font-weight: 400;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
-  margin-bottom: 10px;
-  font-size: 15px;
-  font-weight: 400px;
+  margin-bottom: 30px;
 }
 
-.story-comment img {
-  height: 110px;
-  width: 105px;
+.story-image {
+  height: 140px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .comment {
@@ -370,6 +395,7 @@ button:hover {
 .adnews img {
   width: 290px;
   height: 170px;
+  border-radius: 5px;
 }
 
 .ad-news {
@@ -429,7 +455,7 @@ button:hover {
 
 .orangenews {
   height: 1140px;
-  background-color: cornsilk;
+  background-color: #fdfaf5;
 }
 
 .interview {
@@ -437,6 +463,17 @@ button:hover {
   gap: 5px;
   height: 27.83px;
   margin: 80px 20px 20px;
+}
+
+.big-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.inter-pic1:hover .big-img {
+  transform: scale(1.2);
 }
 
 .interpics {
@@ -447,16 +484,74 @@ button:hover {
 
 .inter-pic {
   height: 243px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  position: relative;
+  overflow: hidden;
 }
 
 .inter-pic1 {
   height: 350px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  position: relative;
+  overflow: hidden;
+}
+
+.big-title {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  position: absolute;
+  bottom: 0;
+  color: white;
+}
+
+.small-title {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  padding: 20px 20px 25px;
+}
+
+.button-name {
+  display: flex;
+  padding: 2px 5px;
+  margin-bottom: 5px;
+  background-color: #407ce8;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 10px;
+  width: 125px;
+  height: 26px;
+  box-sizing: content-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.button-more {
+  display: flex;
+  padding: 10px 0 0;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+}
+
+.small-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.inter-pic:hover .small-img {
+  transform: scale(1.2);
+}
+
+.inter-pic:hover .over-title {
+  max-height: 120px;
 }
 
 .lifestyletitle {
@@ -738,6 +833,10 @@ footer {
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 5px;
   }
+
+  .advertise {
+    display: none;
+  }
 }
 
 @media (min-width: 961px) {
@@ -803,6 +902,10 @@ footer {
 
   .storynews {
     margin: 40px;
+  }
+
+  .story-image {
+    width: 210px;
   }
 
   .interpics {
