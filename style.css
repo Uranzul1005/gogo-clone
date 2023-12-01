@@ -7,11 +7,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica Neue, sans-serif;
-  width: 1220px;
 }
 
 * {
   box-sizing: border-box;
+}
+/* .third-body,
+.second-body,
+.top-body {
+  width: 1220px;
+} */
+
+.third-body,
+.top-body {
+  color: white;
+  background-color: black;
 }
 
 header {
@@ -140,7 +150,7 @@ button {
   width: 73.02px;
   height: 30px;
   border-radius: 100px;
-  border-color: white;
+
   color: white;
   background-image: linear-gradient(-120deg, #e08100, #c90027);
   font-size: 12px;
@@ -170,8 +180,8 @@ button:hover {
   gap: 15px;
   background: linear-gradient(
     90deg,
-    #f4f4f4 7%,
-    hsla(0, 0%, 100%, 0.220348) 17%
+    hsla(0, 0%, 95.7%, 0.03) 7%,
+    hsla(0, 0%, 100%, 0) 17%
   );
   border-radius: 10px;
 }
@@ -333,6 +343,7 @@ button:hover {
 .story-comment {
   display: flex;
   gap: 15px;
+  padding: 10px;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
   margin-bottom: 30px;
 }
@@ -554,34 +565,52 @@ button:hover {
   max-height: 120px;
 }
 
-.lifestyletitle {
-  height: 31px;
-  margin: 50px 15px 15px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
-}
-
 .stylepic {
   display: flex;
   gap: 15px;
   padding: 0 15px;
 }
 
-.stylepic div {
-  height: 360px;
+.stylepic > div {
   width: 100%;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
 }
 
-.technotitle {
-  height: 27.83px;
-  margin: 50px 15px 15px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+.movie-dis {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.movie-pic {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.movie-title {
+  font-size: 16px;
+  font-weight: 500;
+  flex: 1;
+  /* color: hsla(0, 0%, 100%, 0.8); */
+}
+
+.lifestyle-pic2:hover .movie-pic {
+  transform: scale(1.2);
+}
+
+.lifestyle-pic1:hover .movie-pic {
+  transform: scale(1.2);
+}
+
+.lifestyle-pic:hover .movie-pic {
+  transform: scale(1.2);
+}
+
+.lifestyle-pic1,
+.lifestyle-pic2,
+.lifestyle-pic {
+  overflow: hidden;
 }
 
 .technopic {
@@ -590,28 +619,37 @@ button:hover {
   padding: 0 15px;
 }
 
-.technopic div {
-  height: 320px;
+.tech-img {
   width: 100%;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  height: 170px;
+  object-fit: cover;
+  transition: transform 0.5s;
 }
 
-.comictitle {
-  height: 20px;
-  margin: 50px 15px 15px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+.technopic div {
+  width: 100%;
+}
+
+.techno-pic,
+.techno-pic1,
+.techno-pic2 {
+  overflow: hidden;
+}
+
+.techno-pic:hover .tech-img {
+  transform: scale(1.2);
+}
+
+.techno-pic1:hover .tech-img {
+  transform: scale(1.2);
+}
+
+.techno-pic2:hover .tech-img {
+  transform: scale(1.2);
 }
 
 .comicpic div {
-  height: 350px;
   width: 100%;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
 }
 
 .comicpic {
@@ -620,26 +658,53 @@ button:hover {
   padding: 15px;
 }
 
+.comicimg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.comic-pic,
+.comic-pic1 {
+  overflow: hidden;
+}
+
+.comic-pic:hover .comicimg {
+  transform: scale(1.2);
+}
+
+.comic-pic1:hover .comicimg {
+  transform: scale(1.2);
+}
+
 .black {
   display: flex;
   flex-direction: column;
   margin-top: 60px;
   padding: 50px 15px 0;
+  background-color: black;
 }
 
 .newswatch {
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
   height: 21.5px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
   margin-bottom: 20px;
+  color: white;
 }
 
 .blacknews {
   height: 262px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.black-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
 }
 
 /* .bk {
@@ -660,11 +725,9 @@ footer {
   padding: 50px 15px;
 }
 
-.footer-logo {
+.footer-logo img {
   height: 39.23px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 2px solid grey;
+  width: 120px;
 }
 
 .footer-menus {
@@ -706,6 +769,10 @@ footer {
   }
 
   .date {
+    display: none;
+  }
+
+  .calendar {
     display: none;
   }
 }
@@ -773,10 +840,6 @@ footer {
     padding: 0 30px;
   }
 
-  .lifestyletitle {
-    margin: 50px 30px 15px;
-  }
-
   .lifestyle-pic2 {
     display: none;
   }
@@ -793,11 +856,11 @@ footer {
     padding: 0 30px;
   }
 
-  .technotitle {
+  .adtitle {
     margin: 50px 30px 15px;
   }
 
-  .comictitle {
+  .adtitle {
     margin: 50px 30px 15px;
   }
 
@@ -928,19 +991,15 @@ footer {
     padding: 0 40px;
   }
 
-  .lifestyletitle {
-    margin: 50px 40px 15px;
-  }
-
   .technopic {
     padding: 0 40px;
   }
 
-  .technotitle {
+  .adtitle {
     margin: 50px 40px 15px;
   }
 
-  .comictitle {
+  .adtitle {
     margin: 50px 40px 15px;
   }
 
